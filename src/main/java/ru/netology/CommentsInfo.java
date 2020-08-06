@@ -3,12 +3,14 @@ package ru.netology;
 import java.util.Date;
 
 public class CommentsInfo {
-    private String id;
-    private String userId;
+    private int id; // идентификатор комментария
+    private int userId; // идентификатор автора комментария.
     private String postId;
     private String parentId;
-    private Date dataCreate;
-    private String textPost;
+    private int dataCreate; // дата создания комментария в формате Unixtime.
+    private String textPost; // текст комментария
+    private int replyToUser; // идентификатор пользователя или сообщества, в ответ которому оставлен текущий комментарий (если применимо).
+    private int replyToComment; // идентификатор комментария, в ответ на который оставлен текущий (если применимо).
 
     // Url
     private String ulrUrl;
@@ -19,19 +21,19 @@ public class CommentsInfo {
     // Social networks
     private int likeSum;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
@@ -51,11 +53,11 @@ public class CommentsInfo {
         this.parentId = parentId;
     }
 
-    public Date getDataCreate() {
+    public int getDataCreate() {
         return dataCreate;
     }
 
-    public void setDataCreate(Date dataCreate) {
+    public void setDataCreate(int dataCreate) {
         this.dataCreate = dataCreate;
     }
 
@@ -65,6 +67,22 @@ public class CommentsInfo {
 
     public void setTextPost(String textPost) {
         this.textPost = textPost;
+    }
+
+    public int getReplyToUser() {
+        return replyToUser;
+    }
+
+    public void setReplyToUser(int replyToUser) {
+        this.replyToUser = replyToUser;
+    }
+
+    public int getReplyToComment() {
+        return replyToComment;
+    }
+
+    public void setReplyToComment(int replyToComment) {
+        this.replyToComment = replyToComment;
     }
 
     public String getUlrUrl() {
@@ -106,5 +124,4 @@ public class CommentsInfo {
     public void setLikeSum(int likeSum) {
         this.likeSum = likeSum;
     }
-
 }
