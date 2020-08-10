@@ -12,8 +12,29 @@ public class Post {
     private int replyOwnerId; // Идентификатор владельца записи, в ответ на которую была оставлена текущая
     private int replyPostId; // Идентификатор записи, в ответ на которую была оставлена текущая
     private int friendsOnly; // 1, если запись была создана с опцией «Только для друзей».
+
+    public String comments(int count, boolean canPost, boolean groupsCanPost, boolean canClose, boolean canOpen){
+        return null;
+    };
+
     private String copyright; // Источник
+
+    public String likes(int count, boolean userLikes, boolean canLike, boolean canPublish){
+        return null;
+    }
+
+    public String reposts(int count, boolean userReposted){
+        return null;
+    }
+
+    public String views(int count){
+        return null;
+    }
     private String postType; // тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
+
+    public String geo(String type, String coordinates, String place){
+        return null;
+    }
     private int signerId; // идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем;
     private int canPin; // информация о том, может ли текущий пользователь закрепить запись (1 — может, 0 — не может).
     private int canDelete; // информация о том, может ли текущий пользователь удалить запись (1 — может, 0 — не может).
@@ -25,7 +46,7 @@ public class Post {
 
     private String subjectId; // Идентификатор тематики поста
     private String urlSource; // Ссылка на ресурсы, файлы
-    private Boolean signatureView; // Видима подпись или нет
+    private boolean signatureView; // Видима подпись или нет
 
     // Social networks
     private int likeSum; // Кол-во лайков
@@ -201,11 +222,11 @@ public class Post {
         this.urlSource = urlSource;
     }
 
-    public Boolean getSignatureView() {
+    public boolean isSignatureView() {
         return signatureView;
     }
 
-    public void setSignatureView(Boolean signatureView) {
+    public void setSignatureView(boolean signatureView) {
         this.signatureView = signatureView;
     }
 
