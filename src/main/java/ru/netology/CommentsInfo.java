@@ -12,6 +12,10 @@ public class CommentsInfo {
     private int replyToUser; // идентификатор пользователя или сообщества, в ответ которому оставлен текущий комментарий (если применимо).
     private int replyToComment; // идентификатор комментария, в ответ на который оставлен текущий (если применимо).
 
+    public String thread(int count, boolean canPost, boolean showReplyButton, boolean groupCanPost){
+        return null;
+    }
+
     // Url
     private String ulrUrl;
     private String urlVideo;
